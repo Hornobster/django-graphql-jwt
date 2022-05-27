@@ -67,7 +67,7 @@ class RefreshTokenMixin:
 
 
 class RevokeMixin:
-    revoked = graphene.Int(required=True)
+    revoked = graphene.Int(required=False)
 
     @classmethod
     @ensure_refresh_token
@@ -79,7 +79,7 @@ class RevokeMixin:
 
 
 class DeleteRefreshTokenCookieMixin:
-    deleted = graphene.Boolean(required=True)
+    deleted = graphene.Boolean(required=False)
 
     @classmethod
     def delete_cookie(cls, root, info, **kwargs):
